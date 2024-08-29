@@ -15,6 +15,7 @@ You can find a full description of the dataset and its columns [here on Kaggle](
 3. **Libraries & Styling:** Feel free to use any libraries or tools for data visualisation (e.g., Chart.js, D3.js, Recharts, etc.). The styling is up to you, so feel free to be creative and make the dashboard visually appealing.
 4. **Time Constraint:** The task is expected to take **no longer than 2 hours**, so focus on delivering a functional and clean dashboard rather than an overly complex one.
 5. **Clean and Maintainable Code:** Write clean, readable, and maintainable code. Structure your components well and ensure that your code is easy to follow and understand.
+6. **Testing (Optional):** If time permits, please add a few tests to demonstrate your approach to testing. We do not expect extensive test coverage, but adding some basic tests will help us understand your thought process around testing.
 
 ### Acceptance Criteria:
 
@@ -23,6 +24,7 @@ You can find a full description of the dataset and its columns [here on Kaggle](
 3. **Functionality:** The app runs without errors, and the charts or summaries are dynamically generated based on the dataset.
 4. **Code Quality:** The code is well-structured, readable, and follows common best practices in React and TypeScript development.
 5. **Styling and UX:** The dashboard is visually appealing and user-friendly. Though advanced styling is not a requirement, a well-designed and organised UI is appreciated.
+6. **Testing:** If tests are added, they should be clear, meaningful, and demonstrate an understanding of testing concepts.
 
 ## Getting Started with the Project
 
