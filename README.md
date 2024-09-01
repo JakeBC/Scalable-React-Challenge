@@ -1,5 +1,24 @@
 # Scalable React Challenge
 
+## Notes on solution
+
+- I decided to use recharts to display 5 different aspects of the ufo data. I hadn't used this library before so a reasonable amount of time was spent familiarising myself with it.
+- The csv data file was copied into the public folder to make sure it was included as an asset in the build. I used a `window.fetch` call to grab the data before parsing it with `papaparse` as suggested.
+- There are a lot of data points so performance can be a bit sluggish when loading the page. I've not included any means for mitigating this but would consider using suspense or SSR to improve the UX here.
+- There is also a fair amount of number crunching to format the data into the schemas required by the charts. My code here is quite verbose with some duplication in `useChartData`. In a real world scenario I would consider serving the ufo data in the structure required by the UI or condensing this code into a single more efficient but less readable `array.reduce` call if it needed to be done client side.
+- I have tried as far as possible to encapsulate logic into custom hooks - fetching of ufo data and preparation of chart data.
+- App state is handled by a context provider which wraps the whole App. I added a feature to allow a user to select a year form the first chart to filter the remaining charts by. I would have added this as a search param but did not get around to using react router or similar. This value is just persisted with a `useState` call instead.
+- Some tests have been added by they are by no means exhaustive. More effort would be required to validate that various components and state integrate as expected. More complex jest tests and something like a screenshot test using playwright could be useful here.
+
+## Features
+
+- By default all data is displayed but this can be filtered by year by clicking on one of the data points in the top chart.
+- I was hoping to do something a bit more interesting with the location data like overlay it on a world map or integrate with google maps (I've not used this before though so it would have probably taken me a while to figure things out).
+- The layout is simple and should be mobile first.
+- Dark mode is supported.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Challenge Overview
