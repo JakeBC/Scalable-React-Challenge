@@ -1,13 +1,11 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 5px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1fr 1fr);
   }
 }
