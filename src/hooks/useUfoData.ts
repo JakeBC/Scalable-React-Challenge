@@ -48,6 +48,7 @@ export const useUfoData = (): UfoSighting[] => {
  */
 export const useChartData = (selectedYear?: number) => {
   const allUfoData = useUfoData();
+
   const ufoData = selectedYear
     ? allUfoData.filter(
         (item) => new Date(item.datetime).getFullYear() === selectedYear
@@ -78,7 +79,7 @@ export const useChartData = (selectedYear?: number) => {
 
   const byCountry = Object.entries(countBy(ufoData, "country"))
     .map(([country, count]) => ({ country, count }))
-    .filter(({ country }) => country !== "undefined");
+    .filter(({ country }) => country !== "undefined" && country !== "null");
 
   return { byCountry, byShape, byMonth, byYear, ufoData };
 };
