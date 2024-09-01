@@ -16,7 +16,7 @@ type UfoContext = {
   setSelectedYear: (selectedYear?: number) => void;
 };
 
-const initialContext: UfoContext = {
+export const initialContext: UfoContext = {
   ufoData: [],
   byShape: [],
   byCountry: [],
