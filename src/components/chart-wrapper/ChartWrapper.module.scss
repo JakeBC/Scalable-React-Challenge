@@ -1,0 +1,31 @@
+@use "../../styles/colours.module.scss";
+
+.container {
+  position: relative;
+  border: 1px solid colours.$blue2;
+  border-radius: 5px;
+  background-color: colours.$background1;
+  padding: 10px 10px 0 0;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &:first-child {
+    grid-column: 1/-1;
+  }
+}
+
+.chartName {
+  position: relative;
+  margin: 0 20px;
+  font-size: large;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: colours.$charcoal1;
+    color: colours.$white1;
+    border: 1px solid colours.$white1;
+  }
+}
