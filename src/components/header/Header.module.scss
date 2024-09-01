@@ -1,0 +1,15 @@
+@use "../../styles/colours.module.scss";
+
+.container {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.button {
+  border: none;
+  background: colours.$green1;
+  color: inherit;
+  cursor: pointer;
+  padding: 5px 10px;
+}
