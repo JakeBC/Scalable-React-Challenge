@@ -1,31 +1,40 @@
-import { createContext, FC, ReactNode, useContext } from "react";
-import { groupBy } from "lodash";
+import { createContext, FC, ReactNode, useContext, useState } from "react";
 import { UfoSighting } from "../types";
-import { useUfoData } from "../hooks/useUfoData";
+import { useChartData } from "../hooks/useUfoData";
 
 type Props = {
   children: ReactNode;
 };
 
 type UfoContext = {
-  sightings: UfoSighting[];
-  byShape: { [shape: string]: UfoSighting[] };
+  ufoData: UfoSighting[];
+  byShape: { shape: string; count: number }[];
+  byCountry: { country: string; count: number }[];
+  byMonth: { month: string; count: number }[];
+  byYear: { year: string; count: number }[];
+  selectedYear?: number;
+  setSelectedYear: (selectedYear?: number) => void;
 };
 
 const initialContext: UfoContext = {
-  sightings: [],
-  byShape: {},
+  ufoData: [],
+  byShape: [],
+  byCountry: [],
+  byMonth: [],
+  byYear: [],
+  setSelectedYear: () => null,
 };
 
 const UfoDataContext = createContext<UfoContext>(initialContext);
 
 export const UfoDataProvider: FC<Props> = ({ children }) => {
-  const sightings = useUfoData();
-  const byShape = groupBy(sightings, "shape");
-  const ufoData: UfoContext = { sightings, byShape };
+  const [selectedYear, setSelectedYear] = useState<number>();
+  const chartData = useChartData(selectedYear);
 
   return (
-    <UfoDataContext.Provider value={ufoData}>
+    <UfoDataContext.Provider
+      value={{ ...chartData, selectedYear, setSelectedYear }}
+    >
       {children}
     </UfoDataContext.Provider>
   );
