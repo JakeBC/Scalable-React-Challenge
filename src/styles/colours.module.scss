@@ -1,0 +1,26 @@
+$blue1: #003049ff;
+$blue2: #118ab2ff;
+$red1: #d62828ff;
+$orange1: #f77f00ff;
+$yellow1: #fcbf49ff;
+$yellow2: #ffd166ff;
+$vanilla1: #eae2b7ff;
+$pink1: #ef476fff;
+$green1: #06d6a0ff;
+$green2: #073b4cff;
+$charcoal1: #1f1f1f;
+$white1: #e4e2e2;
+$background1: rgba(234, 249, 246, 0.5);
+
+:export {
+  blue1: $blue1;
+  blue2: $blue2;
+  red1: $red1;
+  orange1: $orange1;
+  yellow1: $yellow1;
+  yellow2: $yellow2;
+  vanilla1: $vanilla1;
+  pink1: $pink1;
+  green1: $green1;
+  green2: $green2;
+}
