@@ -1,0 +1,18 @@
+@use "../src/styles/colours.module.scss";
+
+.container {
+  font-family: monospace;
+}
+
+.main {
+  padding: 10px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: colours.$charcoal1;
+    color: white;
+  }
+}
